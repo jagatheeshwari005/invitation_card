@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #F9E4B7;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-tamil   { font-family: 'Noto Serif Tamil', serif; }
+  .font-tamilSans { font-family: 'Noto Sans Tamil', sans-serif; }
+
+  .text-brown   { color: #6B2E1A; }
+  .text-gold    { color: #C8860A; }
+  .text-dgold   { color: #7A4E06; }
+
+  .glass {
+    background: rgba(255, 248, 231, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(200, 134, 10, 0.3);
+  }
+
+  .temple-border {
+    border: 2px solid rgba(200,134,10,0.5);
+    box-shadow:
+      0 0 0 4px rgba(200,134,10,0.1),
+      0 0 0 8px rgba(200,134,10,0.05),
+      inset 0 0 20px rgba(200,134,10,0.08);
+  }
+
+  .gold-glow {
+    box-shadow:
+      0 0 15px rgba(200,134,10,0.4),
+      0 0 30px rgba(200,134,10,0.2),
+      0 0 60px rgba(200,134,10,0.1);
+  }
+
+  .section-pad {
+    padding: 3rem 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-pad {
+      padding: 4rem 1rem;
+    }
+  }
+}
+
+/* Floating petal animation */
+@keyframes float-petal {
+  0% {
+    transform: translateY(-20px) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) translateX(50px);
+    opacity: 0;
+  }
+}
+
+.animate-float-petal {
+  animation: float-petal linear infinite;
+}
+
+/* Petal animation offsets for variety */
+.petal-1  { animation-delay: 0s;    animation-duration: 9s;  left: 10%; }
+.petal-2  { animation-delay: 1.5s;  animation-duration: 12s; left: 25%; }
+.petal-3  { animation-delay: 3s;    animation-duration: 8s;  left: 40%; }
+.petal-4  { animation-delay: 4.5s;  animation-duration: 11s; left: 55%; }
+.petal-5  { animation-delay: 6s;    animation-duration: 10s; left: 70%; }
+.petal-6  { animation-delay: 0.8s;  animation-duration: 13s; left: 85%; }
+.petal-7  { animation-delay: 2.2s;  animation-duration: 9s;  left: 15%; }
+.petal-8  { animation-delay: 5s;    animation-duration: 11s; left: 60%; }
+.petal-9  { animation-delay: 7s;    animation-duration: 8s;  left: 90%; }
+.petal-10 { animation-delay: 3.5s;  animation-duration: 14s; left: 35%; }

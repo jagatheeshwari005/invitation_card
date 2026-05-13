@@ -131,9 +131,7 @@ export default function BlessingsSection() {
               முருகன் அருளால் இந்த மங்கல நிகழ்வு<br />
               சிறப்பாக நடைபெறட்டும்.
             </p>
-            <div className="mt-4 font-tamilSans text-sm" style={{ color: '#C8860A', letterSpacing: '0.1em' }}>
-              ✦ வேல் முருகன் துணை ✦
-            </div>
+            
           </div>
         </ScrollReveal>
       </div>

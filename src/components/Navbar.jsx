@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <div className="font-tamil font-bold text-base" style={{ color: '#C8860A' }}>
-          ராஜேஷ் Varma& சந்தியா
+          ராஜேஷ் வர்மா& சந்தியா
         </div>
 
         {/* Desktop links */}

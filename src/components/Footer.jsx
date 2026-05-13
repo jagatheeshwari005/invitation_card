@@ -21,7 +21,7 @@ export default function Footer() {
         ராஜேஷ் வர்மா & சந்தியா
       </h3>
       <p className="font-tamilSans text-sm mb-6" style={{ color: '#9A5020' }}>
-        ஜூன் 18, 2026 | koppampatti
+        ஜூன் 18, 2026 | கொப்பம்பட்டி
       </p>
 
       <GoldDivider />

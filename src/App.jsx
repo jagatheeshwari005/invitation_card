@@ -1,16 +1,34 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import CoupleSection from './components/CoupleSection'
 import EventCard from './components/EventCard'
 import BlessingsSection from './components/BlessingsSection'
 import Footer from './components/Footer'
-import { KolamBg, Thoranam, BananaTree, KuthuVilakku, TempleSilhouette, FloatingPetals, BananaLeafSide } from './components/Decorations'
+import CountdownTimer from './components/CountdownTimer'
+import VideoBackground from './components/VideoBackground'
+import CinematicIntro from './components/CinematicIntro'
+import { KolamBg, Thoranam, BananaTree, KuthuVilakku, TempleSilhouette, BananaLeafSide } from './components/Decorations'
 
 export default function App() {
+  const [showIntro, setShowIntro] = useState(true)
+
+  const handleEnterMainSite = () => {
+    setShowIntro(false)
+  }
+
+  if (showIntro) {
+    return <CinematicIntro onEnter={handleEnterMainSite} />
+  }
+
   return (
     <div className="relative min-h-screen overflow-x-hidden" style={{ background: '#F9E4B7' }}>
 
-      {/* ── Layer 0: Kolam texture bg ── */}
+      {/* ── Layer 0: Video Background ── */}
+      <VideoBackground />
+
+      {/* ── Layer 1: Kolam texture bg ── */}
       <KolamBg />
 
       {/* ── Layer 1: Fixed Navbar ── */}
@@ -40,8 +58,6 @@ export default function App() {
         <TempleSilhouette />
       </div>
 
-      {/* ── Layer 5: Floating petals ── */}
-      <FloatingPetals />
 
       {/* ── Layer 6: Banana leaf side decorations ── */}
       <BananaLeafSide side="left" />
@@ -75,9 +91,9 @@ export default function App() {
           badge="நிச்சயதார்த்த விழா"
           title="நிச்சயதார்த்தம்"
           quote="இணையும் இதயங்களின் முதல் படி"
-          date="ஜூன் 12, 2025 — ஞாயிறு"
-          time="காலை 9:00 மணி — மதியம் 1:00 மணி"
-          venue="ஸ்ரீ சுப்பிரமணியஸ்வாமி திருமண மண்டபம், திருச்சிராப்பள்ளி"
+          date="மார்ச் 22, 2026 — ஞாயிறு"
+          time="மதியம் 1.00 மணி – மாலை 4.00 மணி"
+          venue="லோகநாதன் இல்லம், தேவனூர் புதூர்"
           photo="/engagement.jpg"
           placeholderLabel="நிச்சயம்"
           glowBorder={false}
@@ -92,12 +108,12 @@ export default function App() {
           title="பெண் அழைப்பு"
           quote="இரு குடும்பங்களை இணைக்கும் இனிய தருணம்"
           date="ஜூன் 17, 2026 — புதன்"
-          time="மாலை 5:00 மணி — இரவு 9:00 மணி"
-          venue="அம்மன் மினி ஹாள், VRM மோட்டார்ஸ் அருகில், திருச்சிராப்பள்ளி"
+          time="மாலை 5.30 மணிக்கு மேல்"
+          venue="அம்மன் மினி ஹாள், தாத்தையங்கார்பேட்டை, துறையூர் ரோடு"
           photo="/bride.jpg"
           placeholderLabel="மணப்பெண்"
           glowBorder={true}
-          mapLink="https://maps.google.com/?q=அம்மன்+மினி+ஹாள்,+VRM+மோட்டார்ஸ்+அருகில்,+திருச்சிராப்பள்ளி"
+          mapLink="https://maps.app.goo.gl/t4w6y9WCjNv7HaVx6/?q=தேஹியங்கார்பேட்,+திருச்சிராப்பள்ளி"
         />
 
         <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
@@ -109,15 +125,50 @@ export default function App() {
           title="திருமணம்"
           subtitle="முகூர்த்தம்"
           quote="அக்னி சாட்சியாக இணையும் புனித உறவு"
-          date="ஜூன் 18, 2026 — செவ்வாய்"
-          time="காலை :4:00 மணி — 6:00 மணி (முகூர்த்தம்)"
-          venue="ஸ்ரீ சுப்பிரமணியஸ்வாமி திருமண மண்டபம், திருச்சிராப்பள்ளி"
+          date="ஜூன் 18, 2026 — புதன்"
+          time="அதிகாலை 4.30 மணி – 6.00 மணி"
+          venue="கொப்பம்பட்டி"
           photo="/wedding.jpg"
           placeholderLabel="திருமணம்"
           glowBorder={true}
           divaGlow={true}
-          mapLink="https://maps.google.com/?q=ஸ்ரீ+சுப்பிரமணியஸ்வாமி+திருமண+மண்டபம்,+திருச்சிராப்பள்ளி"
-        />
+          mapLink="https://maps.app.goo.gl/yNh5SCoWhBpHYYvE7/?q=கொப்பம்பட்டி"
+        >
+          {/* Reception Details Inside Marriage Card */}
+          <div className="mt-6 pt-6 border-t border-amber-200">
+            <div className="text-center">
+              <h4 className="font-tamil font-bold text-lg mb-2" style={{ color: '#C8860A' }}>
+                வரவேற்பு
+              </h4>
+              <p className="font-tamilSans text-sm mb-4" style={{ color: '#7A4E06' }}>
+                V.S.V திருமண மண்டபம், கொப்பம்பட்டி
+              </p>
+              
+              {/* Google Maps Button for Reception */}
+              <motion.a
+                href="https://maps.app.goo.gl/q4w2vAai2G33a9EX9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-tamilSans text-sm font-semibold transition-all"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                style={{
+                  background: 'linear-gradient(135deg, #E8C040, #C8860A)',
+                  color: '#FFF8E7',
+                  boxShadow: '0 4px 20px rgba(200,134,10,0.3)',
+                }}
+              >
+                📍 Google Maps-ல் காண்க
+              </motion.a>
+            </div>
+          </div>
+        </EventCard>
+
+        <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
+
+        
+        {/* 5.6. Countdown Timer */}
+        <CountdownTimer />
 
         <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
 

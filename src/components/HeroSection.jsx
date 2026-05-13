@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import FloatingPetals from './FloatingPetals'
 import { MuruganWatermark, GoldDivider, PhotoPlaceholder } from './Decorations'
 
 export default function HeroSection() {
@@ -16,9 +15,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Floating petals */}
-      <FloatingPetals />
-
+      
       {/* Radial glow behind couple */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -55,6 +52,53 @@ export default function HeroSection() {
           ✦ திருமண அழைப்பிதழ் ✦
         </motion.div>
 
+        {/* Divine Blessings Above Photos */}
+        <div className="flex items-center justify-between w-full mb-4 px-4">
+          {/* Left side divine names */}
+          <div className="flex flex-col items-start space-y-2">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="font-tamil text-sm md:text-base"
+              style={{ color: '#C8860A', opacity: 0.8 }}
+            >
+              ஸ்ரீ சிக்கண்ண கருப்பு துணை
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="font-tamil text-sm md:text-base"
+              style={{ color: '#C8860A', opacity: 0.8 }}
+            >
+              ஸ்ரீ வேடன் வேடச்சி அம்மன் துணை
+            </motion.div>
+          </div>
+
+          {/* Right side divine names */}
+          <div className="flex flex-col items-end space-y-2">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="font-tamil text-sm md:text-base"
+              style={{ color: '#C8860A', opacity: 0.8 }}
+            >
+              ஸ்ரீ பாப்பாத்தி துணை
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="font-tamil text-sm md:text-base"
+              style={{ color: '#C8860A', opacity: 0.8 }}
+            >
+              ஸ்ரீ தலைமலை சஞ்சீவி பெருமாள் துணை
+            </motion.div>
+          </div>
+        </div>
+
         {/* Couple photos */}
         <div className="flex items-center justify-center gap-2 md:gap-10 w-full mb-6 md:mb-8 px-2">
           {/* Groom */}
@@ -69,8 +113,9 @@ export default function HeroSection() {
               transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
               className="relative"
             >
-              <div
+              <motion.div
                 className="w-24 h-24 sm:w-28 md:w-36 sm:h-28 md:h-36 rounded-full overflow-hidden relative"
+                whileHover={{ scale: 1.05 }}
                 style={{
                   border: '3px solid #C8860A',
                   boxShadow: '0 0 0 6px rgba(200,134,10,0.15), 0 0 0 12px rgba(200,134,10,0.07), 0 12px 35px rgba(138,78,6,0.3)',
@@ -85,7 +130,7 @@ export default function HeroSection() {
                 <div style={{ display: 'none' }} className="w-full h-full">
                   <PhotoPlaceholder label="மணமகன்" color="#7A4E06" />
                 </div>
-              </div>
+              </motion.div>
               {/* Decorative ring */}
               <motion.div
                 className="absolute -inset-2 rounded-full pointer-events-none"
@@ -134,8 +179,9 @@ export default function HeroSection() {
               transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
               className="relative"
             >
-              <div
+              <motion.div
                 className="w-24 h-24 sm:w-28 md:w-36 sm:h-28 md:h-36 rounded-full overflow-hidden"
+                whileHover={{ scale: 1.05 }}
                 style={{
                   border: '3px solid #C8860A',
                   boxShadow: '0 0 0 6px rgba(200,134,10,0.15), 0 0 0 12px rgba(200,134,10,0.07), 0 12px 35px rgba(138,78,6,0.3)',
@@ -150,7 +196,7 @@ export default function HeroSection() {
                 <div style={{ display: 'none' }} className="w-full h-full">
                   <PhotoPlaceholder label="மணப்பெண்" color="#A0300A" />
                 </div>
-              </div>
+              </motion.div>
               <motion.div
                 className="absolute -inset-2 rounded-full pointer-events-none"
                 animate={{ rotate: -360 }}

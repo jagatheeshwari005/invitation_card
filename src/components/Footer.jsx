@@ -21,15 +21,15 @@ export default function Footer() {
         ராஜேஷ் வர்மா & சந்தியா
       </h3>
       <p className="font-tamilSans text-sm mb-6" style={{ color: '#9A5020' }}>
-        ஜூன் 14, 2025 | திருச்சிராப்பள்ளி
+        ஜூன் 18, 2026 | koppampatti
       </p>
 
       <GoldDivider />
 
       <div className="flex flex-wrap justify-center gap-4 mt-6">
         {[
-          { icon: '📞', label: '+91 98765 43210' },
-          { icon: '📧', label: 'wedding@rajeshsandhya.in' },
+          { icon: '📞', label: '+91 90424 74771' },
+          
         ].map((c, i) => (
           <div
             key={i}
@@ -45,12 +45,6 @@ export default function Footer() {
         ))}
       </div>
 
-      <p
-        className="font-tamil text-xs mt-8 opacity-60"
-        style={{ color: '#C8860A' }}
-      >
-        ஓம் சரவணபவ ✦ ஸ்கந்த சஷ்டி வேல் முருகன் துணை
-      </p>
-    </footer>
+          </footer>
   )
 }

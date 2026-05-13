@@ -74,7 +74,7 @@ export default function CoupleSection() {
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-6">
           <PersonCard
-            name="ராஜேஷ் வர்மா"
+            name="ராஜேஷ் வர்மா B.Sc AGRI"
             parents="திரு. அருள் – திருமதி. சந்திரா அவர்களின் அன்பு மகன்"
             role="மணமகன்"
             photo="/groom.jpg"
@@ -100,7 +100,7 @@ export default function CoupleSection() {
           </ScrollReveal>
 
           <PersonCard
-            name="சந்தியா"
+            name="சந்தியா B.Sc(Hons) AGRI"
             parents="திரு. லோகநாதன் – திருமதி. கோமதி அவர்களின் அன்பு மகள்"
             role="மணப்பெண்"
             photo="/bride.jpg"

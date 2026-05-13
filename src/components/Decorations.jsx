@@ -281,38 +281,8 @@ export function TempleSilhouette() {
 }
 
 // ─── Floating Flower Petals ───────────────────────────────────────────────────
-export function FloatingPetals() {
-  return (
-    <div className="fixed inset-0 pointer-events-none z-5 overflow-hidden">
-      {[...Array(12)].map((_, i) => {
-        const delay = Math.random() * 15
-        const duration = 15 + Math.random() * 10
-        const startX = Math.random() * 100
-        const size = 8 + Math.random() * 12
-        
-        return (
-          <div
-            key={i}
-            className="absolute animate-float-petal"
-            style={{
-              left: `${startX}%`,
-              top: '-20px',
-              animationDelay: `${delay}s`,
-              animationDuration: `${duration}s`,
-              width: `${size}px`,
-              height: `${size}px`,
-            }}
-          >
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-              <ellipse cx="10" cy="10" rx="8" ry="12" fill="#E8A050" opacity="0.6"/>
-              <ellipse cx="10" cy="10" rx="6" ry="9" fill="#F0C060" opacity="0.4"/>
-              <line x1="10" y1="2" x2="10" y2="18" stroke="#D08030" strokeWidth="0.5"/>
-            </svg>
-          </div>
-        )
-      })}
-    </div>
-  )
+export const FloatingPetals = () => {
+  return null // Removed floating petals as requested
 }
 
 // ─── Banana Leaf Side Decorations ───────────────────────────────────────────────

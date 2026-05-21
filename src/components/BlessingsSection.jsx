@@ -59,11 +59,11 @@ export default function BlessingsSection() {
         </ScrollReveal>
 
         {/* Family cards */}
-        <div className="flex flex-col md:flex-row gap-6 mb-8">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-8">
           {families.map((fam, fi) => (
             <ScrollReveal key={fi} direction={fi === 0 ? 'left' : 'right'} delay={fi * 0.15} className="flex-1">
               <div
-                className="relative rounded-2xl p-6 overflow-hidden"
+                className="relative rounded-2xl p-4 sm:p-6 overflow-hidden"
                 style={{
                   background: 'rgba(255,248,231,0.85)',
                   backdropFilter: 'blur(10px)',
@@ -85,16 +85,16 @@ export default function BlessingsSection() {
                   {fam.members.map((m, mi) => (
                     <div
                       key={mi}
-                      className="flex justify-between items-center py-2 px-3 rounded-lg"
+                      className="flex justify-between items-center py-2 px-2 sm:px-3 rounded-lg"
                       style={{ background: 'rgba(200,134,10,0.06)', border: '1px solid rgba(200,134,10,0.15)' }}
                     >
                       <span 
-                        className="font-tamil text-sm font-semibold" 
+                        className="font-tamil text-xs sm:text-sm font-semibold break-words" 
                         style={{ color: '#6B2E1A' }} 
                         dangerouslySetInnerHTML={{ __html: formatName(m.name) }}
                       />
                       <span
-                        className="font-tamilSans text-xs px-2 py-0.5 rounded-full"
+                        className="font-tamilSans text-[10px] sm:text-xs px-1 sm:px-2 py-0.5 rounded-full whitespace-nowrap"
                         style={{ background: 'rgba(200,134,10,0.15)', color: '#7A4E06' }}
                       >
                         {m.role}

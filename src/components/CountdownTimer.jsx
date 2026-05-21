@@ -44,7 +44,7 @@ export default function CountdownTimer() {
             திருமணத்திற்கு எஞ்சிய நாட்கள்
           </h2>
           
-          <div className="flex justify-center gap-4 md:gap-8 mb-6">
+          <div className="flex justify-center gap-2 sm:gap-3 md:gap-8 mb-6">
             {[
               { value: timeLeft.days, label: 'நாட்கள்' },
               { value: timeLeft.hours, label: 'மணிநேரங்கள்' },
@@ -56,24 +56,25 @@ export default function CountdownTimer() {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="flex flex-col items-center p-4 md:p-6 rounded-2xl"
+                className="flex flex-col items-center p-2 sm:p-3 md:p-6 rounded-2xl"
                 style={{
                   background: 'rgba(255,248,231,0.9)',
                   backdropFilter: 'blur(12px)',
                   border: '2px solid rgba(200,134,10,0.6)',
                   boxShadow: '0 8px 32px rgba(138,78,6,0.15), 0 4px 20px rgba(138,78,6,0.08)',
-                  minWidth: '100px'
+                  minWidth: '60px',
+                  width: 'auto'
                 }}
               >
                 <motion.span
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                  className="font-tamil font-bold text-3xl md:text-4xl"
+                  className="font-tamil font-bold text-xl sm:text-2xl md:text-4xl"
                   style={{ color: '#C8860A' }}
                 >
                   {String(item.value).padStart(2, '0')}
                 </motion.span>
-                <span className="font-tamilSans text-xs md:text-sm mt-2" style={{ color: '#7A4E06' }}>
+                <span className="font-tamilSans text-[10px] sm:text-xs md:text-sm mt-1 md:mt-2" style={{ color: '#7A4E06' }}>
                   {item.label}
                 </span>
               </motion.div>
@@ -86,7 +87,7 @@ export default function CountdownTimer() {
             className="font-tamil text-sm md:text-base italic"
             style={{ color: '#6B2E1A' }}
           >
-            "நேரம் ஓடிக்கொண்டு இருக்கிறது, இன்பும் வளர்ந்து வருகிறது"
+            "நேரம் ஓடிக்கொண்டு இருக்கிறது, இன்பம் வளர்ந்து வருகிறது"
           </motion.p>
         </motion.div>
       </div>

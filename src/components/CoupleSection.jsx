@@ -6,7 +6,7 @@ function PersonCard({ name, parents, role, photo, delay = 0, dir = 'left' }) {
   return (
     <ScrollReveal direction={dir} delay={delay} className="flex-1 min-w-0">
       <div
-        className="relative rounded-2xl p-6 text-center overflow-hidden"
+        className="relative rounded-2xl p-4 sm:p-6 text-center overflow-hidden"
         style={{
           background: 'rgba(255,248,231,0.9)',
           backdropFilter: 'blur(12px)',
@@ -72,7 +72,7 @@ export default function CoupleSection() {
           </div>
         </ScrollReveal>
 
-        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-6">
           <PersonCard
             name="ராஜேஷ் வர்மா B.Sc AGRI"
             parents="திரு. அருள் – திருமதி. சந்திரா அவர்களின் அன்பு மகன்"

@@ -64,6 +64,9 @@ export default function HeroSection() {
               style={{ color: '#C8860A', opacity: 0.8 }}
             >
               ஸ்ரீ சிக்கண்ண கருப்பு துணை
+              <br />
+              ஸ்ரீ பாப்பாத்தி துணை
+              <br />
             </motion.div>
           </div>
 
@@ -77,6 +80,10 @@ export default function HeroSection() {
               style={{ color: '#C8860A', opacity: 0.8 }}
             >
               ஸ்ரீ வேடன் வேடச்சி அம்மன் துணை
+              <br />
+              ஸ்ரீ தலைமலை சஞ்சீவி பெருமாள் துணை
+              <br />
+          
             </motion.div>
           </div>
         </div>

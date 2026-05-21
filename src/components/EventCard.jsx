@@ -290,7 +290,7 @@ export default function EventCard(props) {
                     href={mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-tamilSans text-sm font-semibold"
+                    className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-tamilSans text-xs sm:text-sm font-semibold"
                     style={{
                       background: 'linear-gradient(135deg,#E8C040,#C8860A)',
                       color: '#FFF8E7',

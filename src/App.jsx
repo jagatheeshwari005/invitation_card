@@ -23,7 +23,7 @@ export default function App() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden" style={{ background: '#F9E4B7' }}>
+    <div className="relative min-h-screen overflow-x-hidden w-full" style={{ background: '#F9E4B7' }}>
 
       {/* ── Layer 0: Video Background ── */}
       <VideoBackground />
@@ -93,7 +93,7 @@ export default function App() {
           photo="/bride.jpg"
           placeholderLabel="மணப்பெண்"
           glowBorder={true}
-          mapLink="https://maps.app.goo.gl/t4w6y9WCjNv7HaVx6/?q=தேஹியங்கார்பேட்,+திருச்சிராப்பள்ளி"
+          mapLink="https://www.google.com/maps/dir/?api=1&destination=அம்மன்%20மினி%20ஹாள்,%20தாத்தையங்கார்பேட்டை,%20துறையூர்%20ரோடு"
         />
 
         <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
@@ -112,7 +112,7 @@ export default function App() {
           placeholderLabel="திருமணம்"
           glowBorder={true}
           divaGlow={true}
-          mapLink="https://maps.app.goo.gl/yNh5SCoWhBpHYYvE7/?q=கொப்பம்பட்டி"
+          mapLink="https://www.google.com/maps/dir/?api=1&destination=கொப்பம்பட்டி"
         >
           {/* Reception Details Inside Marriage Card */}
           <div className="mt-6 pt-6 border-t border-amber-200">
@@ -126,10 +126,10 @@ export default function App() {
               
               {/* Google Maps Button for Reception */}
               <motion.a
-                href="https://maps.app.goo.gl/q4w2vAai2G33a9EX9"
+                href="https://www.google.com/maps/dir/?api=1&destination=V.S.V%20திருமண%20மண்டபம்,%20கொப்பம்பட்டி"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-tamilSans text-sm font-semibold transition-all"
+                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-tamilSans text-xs sm:text-sm font-semibold transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 style={{

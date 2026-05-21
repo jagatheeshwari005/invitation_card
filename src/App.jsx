@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import CountdownTimer from './components/CountdownTimer'
 import VideoBackground from './components/VideoBackground'
 import CinematicIntro from './components/CinematicIntro'
-import { KolamBg, Thoranam, BananaTree, KuthuVilakku, TempleSilhouette, BananaLeafSide } from './components/Decorations'
+import { KolamBg, Thoranam, BananaTree, KuthuVilakku, TempleSilhouette } from './components/Decorations'
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true)
@@ -59,11 +59,7 @@ export default function App() {
       </div>
 
 
-      {/* ── Layer 6: Banana leaf side decorations ── */}
-      <BananaLeafSide side="left" />
-      <BananaLeafSide side="right" />
-
-      {/* ── Layer 7: Bottom corner lamps ── */}
+      {/* ── Layer 6: Bottom corner lamps ── */}
       <div className="fixed bottom-4 left-4 z-20 pointer-events-none hidden md:block">
         <KuthuVilakku className="w-10 h-20 animate-diya" />
       </div>
@@ -82,22 +78,6 @@ export default function App() {
 
         {/* 2. Couple */}
         <CoupleSection />
-
-        <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
-
-        {/* 3. Engagement */}
-        <EventCard
-          id="engagement"
-          badge="நிச்சயதார்த்த விழா"
-          title="நிச்சயதார்த்தம்"
-          quote="இணையும் இதயங்களின் முதல் படி"
-          date="மார்ச் 22, 2026 — ஞாயிறு"
-          time="மதியம் 1.00 மணி – மாலை 4.00 மணி"
-          venue="லோகநாதன் இல்லம், தேவனூர் புதூர்"
-          photo="/engagement.jpg"
-          placeholderLabel="நிச்சயம்"
-          glowBorder={false}
-        />
 
         <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
 

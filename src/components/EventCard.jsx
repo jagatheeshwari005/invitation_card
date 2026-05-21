@@ -110,10 +110,8 @@ export default function EventCard(props) {
               {/* Photo */}
               {(photo || placeholderLabel) && (
                 <motion.div
-                  className="w-32 h-32 sm:w-36 md:w-40 sm:h-36 md:h-40 rounded-full mx-auto mb-4 md:mb-6 overflow-hidden cursor-pointer"
+                  className="w-32 h-32 sm:w-36 md:w-40 sm:h-36 md:h-40 rounded-full mx-auto mb-4 md:mb-6 overflow-hidden"
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => photo && setSelectedPhoto(photo)}
                   style={{
                     border: '3px solid #C8860A',
                     boxShadow: '0 0 0 6px rgba(200,134,10,0.12)',
@@ -319,14 +317,6 @@ export default function EventCard(props) {
           </motion.div>
         </ScrollReveal>
       </div>
-
-      {/* Photo Modal */}
-      <AnimatePresence>
-        <PhotoModal
-          photo={selectedPhoto}
-          onClose={() => setSelectedPhoto(null)}
-        />
-      </AnimatePresence>
 
     </section>
   )

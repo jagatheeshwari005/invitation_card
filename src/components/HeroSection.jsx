@@ -53,9 +53,9 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Divine Blessings Above Photos */}
-        <div className="flex items-center justify-between w-full mb-4 px-4">
+        <div className="flex items-center justify-between w-full mb-6 px-8">
           {/* Left side divine names */}
-          <div className="flex flex-col items-start space-y-2">
+          <div className="flex flex-col items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -65,19 +65,10 @@ export default function HeroSection() {
             >
               ஸ்ரீ சிக்கண்ண கருப்பு துணை
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="font-tamil text-sm md:text-base"
-              style={{ color: '#C8860A', opacity: 0.8 }}
-            >
-              ஸ்ரீ வேடன் வேடச்சி அம்மன் துணை
-            </motion.div>
           </div>
 
           {/* Right side divine names */}
-          <div className="flex flex-col items-end space-y-2">
+          <div className="flex flex-col items-end">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -85,22 +76,13 @@ export default function HeroSection() {
               className="font-tamil text-sm md:text-base"
               style={{ color: '#C8860A', opacity: 0.8 }}
             >
-              ஸ்ரீ பாப்பாத்தி துணை
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="font-tamil text-sm md:text-base"
-              style={{ color: '#C8860A', opacity: 0.8 }}
-            >
-              ஸ்ரீ தலைமலை சஞ்சீவி பெருமாள் துணை
+              ஸ்ரீ வேடன் வேடச்சி அம்மன் துணை
             </motion.div>
           </div>
         </div>
 
         {/* Couple photos */}
-        <div className="flex items-center justify-center gap-2 md:gap-10 w-full mb-6 md:mb-8 px-2">
+        <div className="flex items-center justify-center gap-4 md:gap-16 w-full mb-6 md:mb-8 px-4">
           {/* Groom */}
           <motion.div
             className="flex flex-col items-center gap-3"

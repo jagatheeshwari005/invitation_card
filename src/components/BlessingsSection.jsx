@@ -18,11 +18,16 @@ const families = [
       { name: 'திரு. லோகநாதன்',      role: 'தந்தை' },
       { name: 'திருமதி. கோமதி',      role: 'தாய்' },
       { name: 'ஸ்ரீமதி. சந்தியா',    role: 'மணப்பெண்' },
-      { name: 'தமிழ்செல்வன் (B.E)',        role: 'சகோதரர்' },
-      { name: 'ஜெகதீஸ்வரி (B.Tech)',       role: 'சகோதரி' },
+      { name: 'ஜெகதீஸ்வரி (B.Tech)',        role: 'சகோதரி' },
+      { name: 'தமிழ்செல்வன் (B.E)',       role: 'சகோதரன்' },
     ],
   },
 ]
+
+// Helper function to add overline to degree names
+const formatName = (name) => {
+  return name.replace(/(B\.E|B\.Tech)/g, '<span style="text-decoration: overline">$1</span>')
+}
 
 export default function BlessingsSection() {
   return (
@@ -83,7 +88,11 @@ export default function BlessingsSection() {
                       className="flex justify-between items-center py-2 px-3 rounded-lg"
                       style={{ background: 'rgba(200,134,10,0.06)', border: '1px solid rgba(200,134,10,0.15)' }}
                     >
-                      <span className="font-tamil text-sm font-semibold" style={{ color: '#6B2E1A' }}>{m.name}</span>
+                      <span 
+                        className="font-tamil text-sm font-semibold" 
+                        style={{ color: '#6B2E1A' }} 
+                        dangerouslySetInnerHTML={{ __html: formatName(m.name) }}
+                      />
                       <span
                         className="font-tamilSans text-xs px-2 py-0.5 rounded-full"
                         style={{ background: 'rgba(200,134,10,0.15)', color: '#7A4E06' }}

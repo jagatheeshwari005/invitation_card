@@ -93,7 +93,7 @@ export default function App() {
           photo="/bride.jpg"
           placeholderLabel="மணப்பெண்"
           glowBorder={true}
-          mapLink="https://www.google.com/maps/dir/?api=1&destination=அம்மன்%20மினி%20ஹாள்,%20தாத்தையங்கார்பேட்டை,%20துறையூர்%20ரோடு"
+          mapLink="https://maps.app.goo.gl/S3fmuiewLqJ28KpaA"
         />
 
         <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
@@ -112,7 +112,7 @@ export default function App() {
           placeholderLabel="திருமணம்"
           glowBorder={true}
           divaGlow={true}
-          mapLink="https://www.google.com/maps/dir/?api=1&destination=கொப்பம்பட்டி"
+          mapLink="https://maps.app.goo.gl/At2tXrjmvDCV9ojQ7"
         >
           {/* Reception Details Inside Marriage Card */}
           <div className="mt-6 pt-6 border-t border-amber-200">
@@ -126,7 +126,7 @@ export default function App() {
               
               {/* Google Maps Button for Reception */}
               <motion.a
-                href="https://www.google.com/maps/dir/?api=1&destination=V.S.V%20திருமண%20மண்டபம்,%20கொப்பம்பட்டி"
+                href="https://maps.app.goo.gl/bDMPXNBJN3jgzg7D8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-tamilSans text-xs sm:text-sm font-semibold transition-all"

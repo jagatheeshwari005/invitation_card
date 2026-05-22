@@ -26,7 +26,24 @@ export default function App() {
         (position) => {
           const { latitude, longitude } = position.coords
           const origin = `${latitude},${longitude}`
-          const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(destinationPlace)}`
+          
+          // Detect mobile platform for app deep linking
+          const isAndroid = /Android/i.test(navigator.userAgent)
+          const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent)
+          
+          let directionsUrl
+          
+          if (isAndroid) {
+            // Android: open Google Maps app directly
+            directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(destinationPlace)}&travelmode=driving`
+          } else if (isIOS) {
+            // iOS: use universal link that opens Google Maps app
+            directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(destinationPlace)}&travelmode=driving`
+          } else {
+            // Desktop: standard Google Maps directions
+            directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(destinationPlace)}&travelmode=driving`
+          }
+          
           window.open(directionsUrl, '_blank')
         },
         (error) => {

@@ -1,29 +1,25 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import ScrollReveal from './ScrollReveal'
 import { GoldDivider, FloralCorner, PhotoPlaceholder } from './Decorations'
-import PhotoModal from './PhotoModal'
 
-export default function EventCard(props) {
-  const [selectedPhoto, setSelectedPhoto] = useState(null)
-
-  const {
-    id,
-    badge,
-    title,
-    subtitle,
-    quote,
-    date,
-    time,
-    venue,
-    photo,
-    photoAlt = '',
-    placeholderLabel = '',
-    glowBorder = false,
-    mapLink = null,
-    divaGlow = false,
-    children,
-  } = props
+export default function EventCard({
+  id,
+  badge,
+  title,
+  subtitle,
+  quote,
+  date,
+  time,
+  venue,
+  photo,
+  photoAlt = '',
+  placeholderLabel = '',
+  glowBorder = false,
+  mapLink = null,
+  divaGlow = false,
+  onMapClick = null,
+  children,
+}) {
 
   return (
     <section id={id} className="section-pad relative z-10">
@@ -290,6 +286,7 @@ export default function EventCard(props) {
                     href={mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={onMapClick ? (e) => onMapClick(mapLink, e) : undefined}
                     className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-tamilSans text-xs sm:text-sm font-semibold"
                     style={{
                       background: 'linear-gradient(135deg,#E8C040,#C8860A)',

@@ -18,6 +18,28 @@ export default function App() {
     setShowIntro(false)
   }
 
+  const handleMapClick = (destinationUrl, e) => {
+    e.preventDefault()
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords
+          const origin = `${latitude},${longitude}`
+          const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(destinationUrl)}`
+          window.open(directionsUrl, '_blank')
+        },
+        (error) => {
+          // If location is denied or error occurs, just open the destination URL
+          window.open(destinationUrl, '_blank')
+        }
+      )
+    } else {
+      // Geolocation not supported, just open the destination URL
+      window.open(destinationUrl, '_blank')
+    }
+  }
+
   if (showIntro) {
     return <CinematicIntro onEnter={handleEnterMainSite} />
   }
@@ -94,6 +116,7 @@ export default function App() {
           placeholderLabel="மணப்பெண்"
           glowBorder={true}
           mapLink="https://maps.app.goo.gl/S3fmuiewLqJ28KpaA"
+          onMapClick={handleMapClick}
         />
 
         <div className="h-2" style={{ background: 'linear-gradient(to right, transparent, rgba(200,134,10,0.2), transparent)' }} />
@@ -113,6 +136,7 @@ export default function App() {
           glowBorder={true}
           divaGlow={true}
           mapLink="https://maps.app.goo.gl/At2tXrjmvDCV9ojQ7"
+          onMapClick={handleMapClick}
         >
           {/* Reception Details Inside Marriage Card */}
           <div className="mt-6 pt-6 border-t border-amber-200">
@@ -129,6 +153,7 @@ export default function App() {
                 href="https://maps.app.goo.gl/bDMPXNBJN3jgzg7D8"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => handleMapClick("https://maps.app.goo.gl/bDMPXNBJN3jgzg7D8", e)}
                 className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-tamilSans text-xs sm:text-sm font-semibold transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}

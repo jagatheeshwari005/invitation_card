@@ -18,7 +18,7 @@ export default function App() {
     setShowIntro(false)
   }
 
-  const handleMapClick = (destinationUrl, e) => {
+  const handleMapClick = (destinationPlace, fallbackUrl, e) => {
     e.preventDefault()
 
     if (navigator.geolocation) {
@@ -26,17 +26,17 @@ export default function App() {
         (position) => {
           const { latitude, longitude } = position.coords
           const origin = `${latitude},${longitude}`
-          const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(destinationUrl)}`
+          const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodeURIComponent(destinationPlace)}`
           window.open(directionsUrl, '_blank')
         },
         (error) => {
-          // If location is denied or error occurs, just open the destination URL
-          window.open(destinationUrl, '_blank')
+          // If location is denied or error occurs, just open the fallback URL
+          window.open(fallbackUrl, '_blank')
         }
       )
     } else {
-      // Geolocation not supported, just open the destination URL
-      window.open(destinationUrl, '_blank')
+      // Geolocation not supported, just open the fallback URL
+      window.open(fallbackUrl, '_blank')
     }
   }
 
@@ -116,6 +116,7 @@ export default function App() {
           placeholderLabel="மணப்பெண்"
           glowBorder={true}
           mapLink="https://maps.app.goo.gl/S3fmuiewLqJ28KpaA"
+          destinationPlace="அம்மன் மினி ஹாள், தாத்தையங்கார்பேட்டை, துறையூர் ரோடு"
           onMapClick={handleMapClick}
         />
 
@@ -136,6 +137,7 @@ export default function App() {
           glowBorder={true}
           divaGlow={true}
           mapLink="https://maps.app.goo.gl/At2tXrjmvDCV9ojQ7"
+          destinationPlace="கொப்பம்பட்டி"
           onMapClick={handleMapClick}
         >
           {/* Reception Details Inside Marriage Card */}
@@ -153,7 +155,7 @@ export default function App() {
                 href="https://maps.app.goo.gl/bDMPXNBJN3jgzg7D8"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => handleMapClick("https://maps.app.goo.gl/bDMPXNBJN3jgzg7D8", e)}
+                onClick={(e) => handleMapClick("V.S.V திருமண மண்டபம், கொப்பம்பட்டி", "https://maps.app.goo.gl/bDMPXNBJN3jgzg7D8", e)}
                 className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-tamilSans text-xs sm:text-sm font-semibold transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}

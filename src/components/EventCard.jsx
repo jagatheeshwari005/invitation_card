@@ -17,6 +17,7 @@ export default function EventCard({
   glowBorder = false,
   mapLink = null,
   divaGlow = false,
+  destinationPlace = null,
   onMapClick = null,
   children,
 }) {
@@ -286,7 +287,7 @@ export default function EventCard({
                     href={mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={onMapClick ? (e) => onMapClick(mapLink, e) : undefined}
+                    onClick={onMapClick ? (e) => onMapClick(destinationPlace || venue, mapLink, e) : undefined}
                     className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-tamilSans text-xs sm:text-sm font-semibold"
                     style={{
                       background: 'linear-gradient(135deg,#E8C040,#C8860A)',

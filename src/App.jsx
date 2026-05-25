@@ -141,7 +141,7 @@ export default function App() {
           placeholderLabel="திருமணம்"
           glowBorder={true}
           divaGlow={true}
-          mapLink="https://maps.app.goo.gl/ePSfGk4N3HZcznHC8"
+          mapLink="https://maps.app.goo.gl/LCiXrM2p8mSTJDSv9"
           destLat={11.2954127}
           destLng={78.4971746}
           onMapClick={handleMapClick}
